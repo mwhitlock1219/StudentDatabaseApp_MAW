@@ -18,5 +18,7 @@ public class StudentDatabaseApp {
             // same as below
             System.out.println(students[n].toString());
         }
+        System.out.println(students[0]);
+        System.out.println(students[1]);
     }
 }
