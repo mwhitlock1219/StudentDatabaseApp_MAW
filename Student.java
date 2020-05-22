@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Student {
 
     private String firstName, lastName, courses = null, studentID;
@@ -23,6 +22,8 @@ public class Student {
 
         System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
 
+        setStudentID();
+
     }
 
     // Generate an ID
@@ -40,7 +41,7 @@ public class Student {
             Scanner in = new Scanner(System.in);
             String course = in.nextLine();
             if (!course.equals("Q")) {
-                courses = courses + "\n" + course;
+                courses = courses + "\n " + course;
                 tuitionBalance = tuitionBalance + costOfCourse;
             } else {
                 // System.out.println("BREAK!"); to check if it was entering this part of the do
@@ -49,7 +50,8 @@ public class Student {
             }
         } while (1 != 0);
 
-        System.out.println("ENROLLED IN: " + courses);
+        // debugger (used to check addition/enrollment of courses)
+        // System.out.println("ENROLLED IN: " + courses);
         // used as a debugger but now that we know it works we eliminate it
         // System.out.println("TUITION BALANCE: " + tuitionBalance);
     }
@@ -71,4 +73,14 @@ public class Student {
     }
 
     // Show status
+    // public String showInfo() {
+    // return "Name: " + firstName + " " + lastName + "\nCourses Enrolled: " +
+    // courses + "\nBalance: $"
+    // + tuitionBalance;
+    // }
+    public String toString() {
+        return "Name: " + firstName + " " + lastName + "\nGrade Level: " + gradeYear + "\nStudent ID: " + studentID
+                + "\nCourses Enrolled: " + courses + "\nBalance: $" + tuitionBalance;
+
+    }
 }
