@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import javax.sound.midi.Soundbank;
 
 public class Student {
 
@@ -44,18 +43,32 @@ public class Student {
                 courses = courses + "\n" + course;
                 tuitionBalance = tuitionBalance + costOfCourse;
             } else {
-                System.out.println("BREAK!");
+                // System.out.println("BREAK!"); to check if it was entering this part of the do
+                // while loop
                 break;
             }
         } while (1 != 0);
 
         System.out.println("ENROLLED IN: " + courses);
-        System.out.println("TUITION BALANCE: " + tuitionBalance);
+        // used as a debugger but now that we know it works we eliminate it
+        // System.out.println("TUITION BALANCE: " + tuitionBalance);
     }
 
     // View balance
+    public void viewBalance() {
+        System.out.println("Your balance is : $" + tuitionBalance);
+    }
 
     // Pay tuition
+    public void payTuition() {
+        viewBalance();
+        System.out.print("Enter your payment: $");
+        Scanner in = new Scanner(System.in);
+        int payment = in.nextInt();
+        tuitionBalance = tuitionBalance - payment;
+        System.out.println("Thank you for your payment of $" + payment);
+        viewBalance();
+    }
 
     // Show status
 }
