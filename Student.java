@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Student {
 
-    private String firstName, lastName, courses = null, studentID;
+    private String firstName, lastName, courses = "", studentID;
     private int gradeYear, tuitionBalance = 0;
     private static int id = 1000, costOfCourse = 600;
 
